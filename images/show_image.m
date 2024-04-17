@@ -7,4 +7,5 @@ img_double = im2double(img);
 img_scaled = rescale(img_double);
 
 figure
+title("Elysium")
 imshow(img_scaled);

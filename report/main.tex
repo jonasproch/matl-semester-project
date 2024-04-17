@@ -1,13 +1,12 @@
 \documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage[czech]{babel}
+\usepackage{enumitem}
 \usepackage{graphicx}
-\usepackage{multirow}
-\usepackage{siunitx}
 
 \title{Star Wars - The fat man strike's back}
 \author{Jonáš Procházka}
 \date{}
+\renewcommand{\figurename}{Obrázek}
 
 \begin{document}
 \maketitle
@@ -19,5 +18,25 @@ KKY/MATL \hfill 17.4.2024
 \thispagestyle{empty}
 \newpage
 \setcounter{page}{1}
+
+\section{Řešení}
+
+\subsection{Grafické vyobrazení galaxie}
+\begin{enumerate}[label=(\alph*)]
+  \item \textbf{Zobrazení obrázku galaxie} \\
+        Pro zobrazení obrázku galaxie jsem využil funkce \verb|imread|. Následně jsem použil funkci \verb|im2double| a \verb|rescale| pro převod na doubly a normalizaci obrázku. Nakonec již vytvořím figuru a zobrazím obrázek pomocí \verb|imshow|. \\
+        \begin{figure}[h]
+          \centering
+          \includegraphics[scale=0.2]{resources/show_galaxy.png}
+          \caption{Vyobrazený obrázek galaxie}
+        \end{figure}
+  \item \textbf{Rozšíření galaxie} \\
+        Stejně jako u předchozího bodu jsem nejdříve obrázek načetl, převedl na double a přeškáloval. Poté jsem obrázek otočil o 90 stupňů pomocí funkce \verb|imrotate|. Konečně jsem si vytvořil kopii obrázku přetočenou z leva do prava pomocí \verb|fliplr|, obrázky spojil do jedné matice \\ \verb|[img_rotated img_flipped]| a zobrazil. \\
+        \begin{figure}[h]
+          \centering
+          \includegraphics[scale=0.2]{resources/expanded_galaxy.png}
+          \caption{Rozšířená galaxie}
+        \end{figure}
+\end{enumerate}
 
 \end{document}
