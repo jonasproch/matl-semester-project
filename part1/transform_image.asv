@@ -1,0 +1,12 @@
+clc;
+clear;
+close all;
+
+img = imread('default.jpg');
+img_double = im2double(img);
+img_scaled = rescale(img_double);
+img_rotated = imrotate(img_scaled, 90);
+img_flipped = fliplr(img_rotated);
+
+figure
+imshow(img_rotated);
